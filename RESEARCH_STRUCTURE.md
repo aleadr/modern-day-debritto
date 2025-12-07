@@ -99,7 +99,7 @@ Prompt Engineering:
 
 ### 3.3 Generation Layer
 ```
-LLM: Llama 3 8B Instruct
+LLM: Mistral Small 3.1 24B Instruct
 Platform: Cloudflare Workers AI
 Deployment: Global Edge Network
 Response Time: <2 seconds average
@@ -271,7 +271,7 @@ Response Time: <2 seconds average
 ### Resources
 - Cloudflare Workers AI (compute)
 - Historical archives (Jesuit Institute)
-- Open-source LLMs (Llama 3 8B)
+- Open-source LLMs (Mistral Small 3.1 24B)
 
 ---
 

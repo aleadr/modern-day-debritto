@@ -232,7 +232,7 @@ The test suite includes:
 modern-day-debritto/
 ├── src/
 │   ├── index.ts              # Main worker (API handler)
-│   ├── llm.ts                # LLM interface (Llama 3 + BGE embedding)
+│   ├── llm.ts                # LLM interface (Mistral + BGE embedding)
 │   ├── rag.ts                # RAG retrieval logic
 │   ├── persona.json          # Detailed persona profile
 │   └── persona_vectors.json  # Memory database (33 items)
@@ -249,7 +249,7 @@ modern-day-debritto/
 1. **User sends query** (chat or choice mode)
 2. **RAG retrieval**: Query is embedded and top 3 relevant memories are retrieved via cosine similarity
 3. **Prompt construction**: System prompt includes persona profile + retrieved memories
-4. **LLM generation**: Llama 3 8B generates response as St. John de Britto
+4. **LLM generation**: Mistral Small 3.1 24B generates response as St. John de Britto
 5. **Response parsing**: JSON extracted for choice mode, raw text for chat mode
 6. **CORS-enabled response** returned to client
 
@@ -268,9 +268,15 @@ modern-day-debritto/
 
 ## 🔧 Technology Stack
 
+<p align="left">
+  <a href="https://mistral.ai" target="_blank">
+   <img src="https://avatars.githubusercontent.com/u/132372032?s=200&v=4" alt="Mistral AI" height="50"/>
+  </a>
+</p>
+
 - **Runtime**: Cloudflare Workers (V8 isolates)
 - **Language**: TypeScript
-- **LLM**: Llama 3 8B Instruct (`@cf/meta/llama-3-8b-instruct`)
+- **LLM**: Mistral Small 3.1 24B Instruct (`@cf/mistralai/mistral-small-3.1-24b-instruct`)
 - **Embedding Model**: BGE-small (`@cf/baai/bge-small-en-v1.5`)
 - **AI Provider**: Cloudflare Workers AI
 - **Deployment**: Wrangler CLI

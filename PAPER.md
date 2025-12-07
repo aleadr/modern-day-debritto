@@ -97,7 +97,7 @@ System Prompt Construction:
   - Language Requirements (Indonesian, gender-neutral)
   - Length Constraints (100-150 words)
     ↓
-LLM Generation (Llama 3 8B Instruct)
+LLM Generation (Mistral Small 3.1 24B Instruct)
     ↓
 Response (Indonesian, character-consistent)
 ```
@@ -139,7 +139,7 @@ Based on analysis of historical quotes:
 
 - **Platform**: Cloudflare Workers (edge computing, serverless)
 - **Runtime**: V8 isolates (sub-ms cold start)
-- **LLM**: Llama 3 8B Instruct (`@cf/meta/llama-3-8b-instruct`)
+- **LLM**: Mistral Small 3.1 24B Instruct (`@cf/mistralai/mistral-small-3.1-24b-instruct`)
 - **Embedding**: BGE-small (`@cf/baai/bge-small-en-v1.5`)
 - **Language**: TypeScript
 - **Deployment**: Global edge network (low latency)
@@ -243,7 +243,7 @@ Technical demonstration of:
 1. **No Embeddings Yet**: persona_vectors.json has empty embedding arrays (RAG not fully functional until populated)
 2. **No Conversation History**: Each query is stateless
 3. **Single Persona**: System is hardcoded to one character
-4. **No Fine-Tuning**: Uses base Llama 3 without historical letter fine-tuning
+4. **No Fine-Tuning**: Uses base Mistral Small 3.1 without historical letter fine-tuning
 
 ### 7.2 Future Enhancements
 
@@ -280,7 +280,7 @@ The project contributes both a technical architecture (RAG + psychological groun
 
 ### Technical
 - Cloudflare Workers AI Documentation. (2025). *AI Models & Bindings*.
-- Meta AI. (2025). *Llama 3 Technical Report*.
+- Mistral AI. (2025). *Mistral Small Technical Report*.
 - Beijing Academy of AI (BAAI). (2023). *BGE-small-en-v1.5: Small but Mighty Embedding Model*.
 
 ### Methodology

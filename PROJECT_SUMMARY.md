@@ -3,7 +3,7 @@
 ## What We Built
 
 An AI-powered character simulation of **St. John (João) de Britto**, a 17th-century Jesuit missionary, using:
-- **Cloudflare Workers AI** (Llama 3 8B)
+- **Cloudflare Workers AI** (Mistral Small 3.1 24B)
 - **RAG** (Retrieval-Augmented Generation)
 - **MBTI-based psychological modeling**
 - **Bahasa Indonesia** responses

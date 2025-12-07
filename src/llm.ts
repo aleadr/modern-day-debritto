@@ -8,7 +8,7 @@ interface Ai {
     run(model: string, inputs: any): Promise<any>;
 }
 
-const CHAT_MODEL = "@cf/meta/llama-3-8b-instruct";        // adjust to actual model slug if needed
+const CHAT_MODEL = "@cf/mistralai/mistral-small-3.1-24b-instruct";  // Mistral Small 3.1 24B
 const EMBED_MODEL = "@cf/baai/bge-small-en-v1.5";         // embedding model slug
 
 export async function getEmbedding(env: Env, text: string): Promise<number[]> {
