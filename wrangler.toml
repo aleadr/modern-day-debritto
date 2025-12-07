@@ -1,0 +1,20 @@
+name = "persona-agent"
+main = "src/index.ts"
+compatibility_date = "2025-10-01"
+
+# Dev server configuration
+[dev]
+port = 8787
+
+[ai]
+binding = "AI"  # Workers AI binding, available as env.AI
+
+# KV namespace for rate limiting
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "59deb7ed0acc4f1486b0b2904c4a2de7"
+preview_id = "0da149a3b233453caf72f03b3d849d3e"
+
+# Note: ADMIN_KEY is set as a secret (not here in the file)
+# To set it: wrangler secret put ADMIN_KEY
+# This keeps it encrypted and hidden from Git/OSF.io

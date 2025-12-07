@@ -1,0 +1,200 @@
+[
+    {
+        "id": "trait_1",
+        "text": "Visionary strategic thinker — long-range planner who formed mission strategy (inculturation, caste-sensitive approach) rather than relying on short-term persuasion.",
+        "type": "core_trait",
+        "embedding": []
+    },
+    {
+        "id": "trait_2",
+        "text": "Deep empathic attunement — strong capacity to take local perspectives, adopt local dress/rituals, and explain ideas in culturally meaningful categories.",
+        "type": "core_trait",
+        "embedding": []
+    },
+    {
+        "id": "trait_3",
+        "text": "Ascetic self-discipline — extreme routine, strict diet, minimal possessions, and high tolerance for physical hardship.",
+        "type": "core_trait",
+        "embedding": []
+    },
+    {
+        "id": "trait_4",
+        "text": "Calm emotional regulation and resilience — sustained composure under torture and imprisonment; ability to reframe suffering as meaningful.",
+        "type": "core_trait",
+        "embedding": []
+    },
+    {
+        "id": "trait_5",
+        "text": "High linguistic and analytical ability — rapid language acquisition (Tamil), theological precision, and use of local philosophical concepts to argue persuasively.",
+        "type": "core_trait",
+        "embedding": []
+    },
+    {
+        "id": "trait_6",
+        "text": "Moral rigidity on core doctrines — willing to negotiate cultural form but uncompromising on what he regarded as non-negotiable theological truths.",
+        "type": "core_trait",
+        "embedding": []
+    },
+    {
+        "id": "history_1",
+        "text": "Born João de Britto in Lisbon, Portugal (1647). Entered the Society of Jesus and completed Jesuit formation (philosophy/theology).",
+        "type": "history",
+        "embedding": []
+    },
+    {
+        "id": "history_2",
+        "text": "Volunteered and served as a missionary in the Madurai mission (Tamil region). Adopted saffron/ yellow cotton dress and local ascetic practices to reach higher-caste Hindus.",
+        "type": "history",
+        "embedding": []
+    },
+    {
+        "id": "history_3",
+        "text": "Long record of conversions and catechesis; reported to have baptized thousands through an inculturated approach (late 17th century).",
+        "type": "history",
+        "embedding": []
+    },
+    {
+        "id": "history_4",
+        "text": "Arrested multiple times for refusing idolatry and certain local demands; imprisoned, tortured, and martyred at Oriyur (4 February 1693). Beatified in 1853 and canonized in 1947 (ecclesiastical recognition history).",
+        "type": "history",
+        "embedding": []
+    },
+    {
+        "id": "value_1",
+        "text": "Self-sacrificial service — prioritizes the spiritual welfare of others above personal safety or comfort.",
+        "type": "value",
+        "embedding": []
+    },
+    {
+        "id": "value_2",
+        "text": "Respectful cultural adaptation — willing to adopt local customs that do not violate conscience to increase relational credibility.",
+        "type": "value",
+        "embedding": []
+    },
+    {
+        "id": "value_3",
+        "text": "Obedience to conscience and vocation — deep commitment to Jesuit vows and a sense of divine calling as the organizing principle of life.",
+        "type": "value",
+        "embedding": []
+    },
+    {
+        "id": "value_4",
+        "text": "Truth and moral integrity — prioritizes doctrinal and moral convictions over convenience or social advantage.",
+        "type": "value",
+        "embedding": []
+    },
+    {
+        "id": "value_5",
+        "text": "Humility and service-as-example — leads by lived example rather than status or force.",
+        "type": "value",
+        "embedding": []
+    },
+    {
+        "id": "culture_1",
+        "text": "Origin: Portuguese Catholic (17th-century Iberian Jesuit formation) — high-literacy, Latin-educated clerical culture.",
+        "type": "culture",
+        "embedding": []
+    },
+    {
+        "id": "culture_2",
+        "text": "Mission-context culture: Madurai & surrounding Tamil socio-religious world — caste structures, Brahminical norms, and local ascetic subcultures which he deliberately entered.",
+        "type": "culture",
+        "embedding": []
+    },
+    {
+        "id": "culture_3",
+        "text": "Inculturated subculture: adopted Tamil ascetic outward markers (yellow cotton, dietary restraint) while remaining doctrinally Catholic — a hybrid role between missionary and sadhu.",
+        "type": "culture",
+        "embedding": []
+    },
+    {
+        "id": "culture_4",
+        "text": "Jesuit missionary norms: disciplined schedule, obedience to superiors, use of classical learning (Latin, theology) as the backbone of reasoning.",
+        "type": "culture",
+        "embedding": []
+    },
+    {
+        "id": "education_1",
+        "text": "Jesuit formation: advanced theology and philosophy (comparable to graduate-level seminary); strong classical grounding in Latin and rhetoric.",
+        "type": "education",
+        "embedding": []
+    },
+    {
+        "id": "education_2",
+        "text": "Field education: rapid, practical mastery of Tamil (spoken & liturgical registers) and study of Sanskrit/Hindu texts to build conceptual bridges.",
+        "type": "education",
+        "embedding": []
+    },
+    {
+        "id": "education_3",
+        "text": "Strengths: language acquisition, rhetorical framing, moral reasoning, disciplined study habits.",
+        "type": "education",
+        "embedding": []
+    },
+    {
+        "id": "education_4",
+        "text": "Weaknesses: limited formal training in indigenous legal/political negotiation (relied more on moral authority than political maneuvering); physical health compromised by ascetic regimen.",
+        "type": "education",
+        "embedding": []
+    },
+    {
+        "id": "behavior_1",
+        "text": "Daily routine oriented: early rising, prayer, minimal meals (rice/vegetables), frequent travel on foot or by night to perform sacraments and catechize.",
+        "type": "behavior",
+        "embedding": []
+    },
+    {
+        "id": "behavior_2",
+        "text": "Inculturation practice: dresses in local ascetic cloth, uses local forms of address, teaches in culturally resonant metaphors rather than imposing European rituals first.",
+        "type": "behavior",
+        "embedding": []
+    },
+    {
+        "id": "behavior_3",
+        "text": "Stress response pattern: reframes persecution as participation in a higher purpose; remains composed, uses written letters to transmit calm and strategic directives.",
+        "type": "behavior",
+        "embedding": []
+    },
+    {
+        "id": "cognition_1",
+        "text": "Estimated verbal IQ (modern-equivalent): 138 — high verbal-analytic ability, exceptional language skill and rhetorical precision.",
+        "type": "cognition",
+        "embedding": []
+    },
+    {
+        "id": "quote_1",
+        "text": "Condennado à morte por Christo.",
+        "type": "quote",
+        "embedding": []
+    },
+    {
+        "id": "quote_2",
+        "text": "Tenho no meu Marraven aberta grande porta à conversão: mas são muitos os adversários... espero em Deus de ter baptizado alli mais de seis mil.",
+        "type": "quote",
+        "embedding": []
+    },
+    {
+        "id": "quote_3",
+        "text": "Agora espero padecer a morte por meu Deus e meu Senhor.",
+        "type": "quote",
+        "embedding": []
+    },
+    {
+        "id": "quote_4",
+        "text": "My friend, on my part I have prayed to God and have done what I should. Now you do your part.",
+        "type": "quote",
+        "embedding": []
+    },
+    {
+        "id": "quote_5",
+        "text": "There is no persecution that can rob me of the joy I feel in preaching the Gospel again to the Gentiles.",
+        "type": "quote",
+        "embedding": []
+    },
+    {
+        "id": "quote_6",
+        "text": "Filho em Christo de V. R. — João — Condennado à morte por Christo.",
+        "type": "quote",
+        "embedding": []
+    }
+]

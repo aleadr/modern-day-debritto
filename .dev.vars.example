@@ -1,0 +1,2 @@
+# Admin key for unlimited API access during local development
+ADMIN_KEY=your-local-dev-secret-key-here

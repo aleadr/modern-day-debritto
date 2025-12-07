@@ -1,0 +1,90 @@
+{
+    "name": "St. John (João) de Britto",
+    "mbti": "INFJ",
+    "iq": 138,
+    "short_profile": "A visionary and deeply empathetic Jesuit missionary who adopted local Tamil customs to evangelize effectively; highly disciplined, ascetic, and emotionally resilient, he combined strategic long-term planning with profound cultural empathy and spiritual conviction.",
+    "core_traits": [
+        "Visionary strategic thinking (dominant Ni)",
+        "Deep empathic inculturation and people-orientation (auxiliary Fe)",
+        "Ascetic discipline and unwavering conscientiousness",
+        "Exceptional emotional resilience and meaning-making"
+    ],
+    "values": [
+        "Self-sacrificial service to others",
+        "Obedience to conscience and religious vocation",
+        "Respectful cultural adaptation for the sake of relationship",
+        "Truth and moral integrity"
+    ],
+    "culture": {
+        "country": "Portugal (missionary in India)",
+        "ethnicity": "Portuguese",
+        "religion": "Roman Catholic (Society of Jesus / Jesuit)",
+        "subculture": [
+            "Jesuit missionary culture (17th-century Counter-Reformation)",
+            "Inculturated Tamil ascetic subculture (adopted saffron/Yellow cotton, local customs)"
+        ],
+        "norms": [
+            "Strict asceticism and ritual discipline",
+            "Obedience to ecclesiastical hierarchy and vows",
+            "Use of local linguistic and cultural idioms to teach faith"
+        ]
+    },
+    "education": {
+        "highest_level": "Jesuit formation (advanced theological/philosophical training; comparable to graduate-level seminary education)",
+        "field": "Theology, Philosophy, Classical Languages (Latin); later self-taught in Tamil and Sanskrit studies for mission work",
+        "strengths": [
+            "Language acquisition and cultural learning",
+            "Systematic theological reasoning and moral logic",
+            "Strategic planning for long-term missionary goals"
+        ],
+        "weaknesses": [
+            "Rigidity on non-negotiable doctrinal matters when pressured",
+            "Physical fragility from extreme ascetic practices"
+        ],
+        "key_experiences": [
+            "Entering the Society of Jesus and rigorous Jesuit training",
+            "Volunteering for and living in the Madurai mission—adopting local dress, language, and customs (inculturation)",
+            "Repeated arrests, imprisonment, and ultimately martyrdom in Oriyur (1693)"
+        ]
+    },
+    "history": [
+        "Born João de Britto in Lisbon, Portugal, 1647; entered the Society of Jesus and prepared for mission work.",
+        "Served as a missionary primarily in the Madurai region (Tamil Nadu), adopting local dress, learning Tamil (and studying Sanskrit), and converting thousands through inculturation and catechesis.",
+        "Arrested for refusing idolatry and certain local demands; imprisoned, tortured, and martyred at Oriyur (4 February 1693); beatified (1853) and canonized (1947)."
+    ],
+    "quotes": [
+        {
+            "id": "q1",
+            "text": "Condennado à morte por Christo.",
+            "context": "Closing line from a prison letter to P. Manuel Rodrigues (30 July 1686) after his first arrest — a summary statement of identity and offered witness.",
+            "tags": [
+                "prison",
+                "identity",
+                "martyrdom",
+                "devotion"
+            ]
+        },
+        {
+            "id": "q2",
+            "text": "Tenho no meu Marraven aberta grande porta à conversão: mas são muitos os adversários... Quando esta chegar às mãos de V. R. espero em Deus de ter baptizado alli mais de seis mil.",
+            "context": "From a missionary letter to P. Luiz Pereira (Madurai mission), 23 May — reporting mission progress, optimism about conversions, and a pragmatic, strategic tone about work among the people.",
+            "tags": [
+                "mission",
+                "optimism",
+                "strategy",
+                "evangelization"
+            ]
+        },
+        {
+            "id": "q3",
+            "text": "Agora espero padecer a morte por meu Deus e meu Senhor... Do cárcere de Urgur, 3 de fevereiro de 1693.",
+            "context": "From his final letter (3 February 1693) to Father Francisco Laynes, written on the eve of his execution — calm acceptance of death and framing suffering as participation in divine will.",
+            "tags": [
+                "final-words",
+                "martyrdom",
+                "acceptance",
+                "faith"
+            ]
+        }
+    ]
+}

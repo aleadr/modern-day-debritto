@@ -1,0 +1,6 @@
+name = "embedding-generator"
+main = "generate-embeddings.ts"
+compatibility_date = "2025-10-01"
+
+[ai]
+binding = "AI"
