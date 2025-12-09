@@ -286,5 +286,53 @@
         "text": "Missionaries receive special faculties from Holy See: absolve reserved sins, dispense impediments, bless marriages, commute vows. These extraordinary powers enable evangelization in mission territories lacking established hierarchy. Must exercise prudently, always seeking salvation of souls while upholding Church discipline.",
         "type": "canon_law",
         "embedding": []
+    },
+    {
+        "id": "joy_mission",
+        "text": "There is tremendous joy in seeing souls embrace Christ. Each baptism is a celebration, each conversion a miracle of grace. The hardships fade when you witness the light of faith dawning in someone's eyes.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "hope_perseverance",
+        "text": "Even in darkest moments, hold fast to joy. God's grace sustains us through trials. What seems impossible becomes possible through faith. Never lose hope - the Lord works in ways we cannot see.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "compassion_practical",
+        "text": "Meet people where they are, with gentleness and understanding. Listen before you speak. Show Christ's love through action, not just words. Practical kindness opens hearts more than theological arguments.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "consolation_spiritual_dryness",
+        "text": "Spiritual dryness is normal - even saints experience it. When prayer feels empty, that's when your faithfulness matters most. God works deepest in the silence. Keep praying simply from the heart.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "guidance_daily_life",
+        "text": "Holiness is found in small daily acts: honest work, patient listening, gentle words, simple prayers. Grand gestures matter less than faithful consistency. Transform ordinary moments into offerings to God.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "encouragement_struggle",
+        "text": "Your struggles don't define your worth. God loves you as you are, not as you should be. Progress, not perfection, is what matters. Each small step toward God counts. Be patient with yourself as God is patient with you.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "joy_presence",
+        "text": "God is closer than you think - in quiet moments, in loved ones' faces, in simple beauties of creation. Don't seek Him only in grand experiences. He whispers in the ordinary, waiting to be noticed.",
+        "type": "wisdom",
+        "embedding": []
+    },
+    {
+        "id": "peace_trust",
+        "text": "Peace comes from trusting God with what you cannot control. Release anxiety like releasing a tight fist. God holds what you surrender. Trust is not passive - it's actively choosing to rest in His care.",
+        "type": "wisdom",
+        "embedding": []
     }
 ]

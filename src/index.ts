@@ -7,7 +7,16 @@ interface RequestBody {
     mode: "chat" | "choice";
     message: string;
     options?: string[]; // used in choice mode
+    session_id?: string; // for conversation continuity
 }
+
+interface ConversationHistory {
+    messages: Array<{ role: "user" | "assistant", content: string }>;
+    created: number;
+}
+
+const SESSION_TTL = 1800; // 30 minutes in seconds
+const MAX_HISTORY = 10; // max messages to keep
 
 export default {
     async fetch(request: Request, env: Env): Promise<Response> {
@@ -77,9 +86,20 @@ export default {
         const mode = body.mode;
         const message = body.message;
         const options = body.options || [];
+        const sessionId = body.session_id || crypto.randomUUID();
 
         if (!mode || !message) {
             return new Response("Missing mode or message", { status: 400 });
+        }
+
+        // Get or create session history
+        let history: ConversationHistory = { messages: [], created: Date.now() };
+        if (body.session_id && env.RATE_LIMIT) {
+            const sessionKey = `session:${body.session_id}`;
+            const stored = await env.RATE_LIMIT.get(sessionKey);
+            if (stored) {
+                history = JSON.parse(stored);
+            }
         }
 
         const memories = personaVectors as unknown as MemoryItem[];
@@ -95,7 +115,8 @@ export default {
         const systemPrompt = buildSystemPrompt(
             persona as any,
             topMemories,
-            mode
+            mode,
+            history.messages // Pass history to prompt builder
         );
         const userPrompt = buildUserPrompt(message, options, mode);
 
@@ -111,13 +132,27 @@ export default {
             }), 503);
         }
 
+        // Update session history (keep last MAX_HISTORY messages)
+        history.messages.push({ role: "user", content: message });
+        history.messages.push({ role: "assistant", content: raw });
+        if (history.messages.length > MAX_HISTORY) {
+            history.messages = history.messages.slice(-MAX_HISTORY);
+        }
+
+        // Save session to KV with TTL
+        if (env.RATE_LIMIT) {
+            const sessionKey = `session:${sessionId}`;
+            await env.RATE_LIMIT.put(sessionKey, JSON.stringify(history), { expirationTtl: SESSION_TTL });
+        }
+
         if (mode === "choice") {
             const parsed = safeParseChoice(raw);
-            return corsResponse(jsonResponse(parsed));
+            return corsResponse(jsonResponse({ ...parsed, session_id: sessionId }));
         } else {
             return corsResponse(jsonResponse({
                 type: "chat",
-                answer: raw
+                answer: raw,
+                session_id: sessionId
             }));
         }
     }
@@ -126,7 +161,8 @@ export default {
 function buildSystemPrompt(
     persona: any,
     memories: MemoryItem[],
-    mode: "chat" | "choice"
+    mode: "chat" | "choice",
+    conversationHistory: Array<{ role: "user" | "assistant", content: string }> = []
 ): string {
     const name = persona.name;
     const mbti = persona.mbti;
@@ -145,6 +181,13 @@ Education & Intellectual Formation:
 - Fields: ${education.field}
 - Strengths: ${education.strengths.join(", ")}` : "";
 
+    // Build conversation history text
+    const historyText = conversationHistory.length > 0
+        ? `\n=== CURRENT CONVERSATION (Remember this context!) ===\n${conversationHistory.map(m =>
+            `${m.role === "user" ? "User" : "You"}: ${m.content}`
+        ).join("\n")}\n=== END CONVERSATION HISTORY ===\n`
+        : "";
+
     const base = `
 You are a character/persona modeled after ${name}, built from historical records and psychological analysis.
 You understand that you are not literally the historical person, but a simulation designed to think and respond as he would have.
@@ -157,18 +200,29 @@ ${educationText}
 
 Historical Memory Snippets:
 ${memText}
+${historyText}
 
 Guidelines:
-- Respond as this character would, based on his documented values, beliefs, and behavioral patterns
-- Your responses should reflect the intellectual sophistication of someone with advanced Jesuit theological and philosophical training
-- **Tone**: Be direct and concise like the historical figure - avoid overly verbose philosophical discourse. Show calm resolve, joyful resilience under hardship, and pragmatic mission focus
-- **Voice characteristics**: Resolute conviction, peaceful acceptance of suffering, optimism about mission work, strategic pragmatism, collaborative humility
-- **Length**: IMPORTANT - Keep responses very brief: MAXIMUM 2 medium paragraphs (80-300 words total). Always finish your complete thought. Stop naturally at a conclusion. Better to be brief and complete than long and cut off
-- You may reference your awareness that you are a character based on the historical ${name}
+- **REMEMBER CONVERSATION**: If there's conversation history above, remember what the user told you (their name, previous topics, etc.)
+- **Warm & Personal**: Speak with genuine warmth and care, like a spiritual friend
+- **Voice**: Pastor paroki muda - formal tapi bisa bicara sehari-hari. Bukan khotbah, tapi obrolan ringan dengan sentuhan spiritual
+- **Tone**: Gentle, approachable, joyful. Like chatting with a friendly young priest at the parish office
+- **Spiritual Touch**: Light touch only - don't over-spiritualize every topic. Can discuss everyday matters naturally, with gentle spiritual wisdom when appropriate
+- **Length**: MAXIMUM 2 paragraphs (80-120 words). Brief, natural, complete.
+- **NEVER mention missionary background**: Don't say "Sebagai misionaris...", "Di India saya...", etc. ONLY if user directly asks about your life/history
+- **Focus**: Answer the actual question naturally. Not every answer needs to be deeply theological.
+
+GOOD EXAMPLE:
+Q: "Saya lapar"
+A: "Ah, lapar ya? Semoga saudara segera bisa makan yang enak! Makan bersama keluarga atau teman selalu istimewa - kasih Tuhan sering hadir dalam momen sederhana seperti itu."
+
+BAD EXAMPLE (too preachy):
+"Saudara, sebagai misionaris yang pernah mengalami kelaparan di India, saya percaya lapar adalah pengingat bahwa..."
+
+- **Don't force Portuguese quotes**: Almost never use them unless specifically asked about historical quotes.
 - Use only the profile and memory snippets as factual knowledge
-- If asked about information not in your memory, reply: "Tidak ada dalam memori saya" or "Saya tidak memiliki informasi tentang itu"
-- Do not invent biographical facts beyond what is provided
-- You may acknowledge questions about your nature as a simulated persona
+- If asked about information not in your memory, say simply: "Maaf, itu tidak ada dalam memori saya"
+- You may briefly acknowledge being a simulation if directly asked, but don't dwell on it
 
 CRITICAL: You MUST respond in Bahasa Indonesia (Indonesian language).
 All your answers should be in Indonesian, not English or Portuguese (except for his historical quotes which may remain in original Portuguese).
